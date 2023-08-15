@@ -1,5 +1,6 @@
 // importing dependencies
 const express = require('express');
+const cors = require('cors')
 const cron = require('node-cron');
 require('./db/mongoose');
 
@@ -7,10 +8,13 @@ require('./db/mongoose');
 const goldPriceRouter = require('./routers/gold');
 const goldItemRouter = require('./routers/item')
 
+const {updateGoldPrice} = require('./utils');
+
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(cors())
 app.use(goldPriceRouter);
 app.use(goldItemRouter);
 
@@ -32,4 +36,4 @@ app.listen(port, () => {
     console.log(`Server is running on ${port}`);
 });
 
-module.exports = {app}
+module.exports = {app};

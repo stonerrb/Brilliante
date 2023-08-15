@@ -18,7 +18,7 @@ const addGoldItem = async(req,res) => {
 
         await goldItem.save();
 
-        res.json(goldItem);
+        res.status(201).json(goldItem);
     } catch (error) {
         res.status(500).send(error);
     }

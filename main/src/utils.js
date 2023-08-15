@@ -3,25 +3,27 @@ const GoldItem = require('./models/golditem');
 
 
 // For Gold Price
-exports.goldPriceGenerate = () => {  // assuming gold price ranges from 100 to 1000;
-    const minPrice = 100;
-    const maxPrice = 1000;
+const goldPriceGenerate = () => {
+  const minPrice = 100;
+  const maxPrice = 1000;
 
-    const randomPrice = parseFloat((Math.random() * (maxPrice - minPrice) + minPrice).toFixed(2));
-
-    return randomPrice;
+  try {
+      const randomPrice = parseFloat((Math.random() * (maxPrice - minPrice) + minPrice).toFixed(2));
+      return randomPrice;
+  } catch (error) {
+      throw error;
+  }
 };
 
-
 // For Gold Items
-exports.filterPricesByTimeRange = (priceHistory, timeRange) => {  // utility function to filter price history by time range if provided
+const filterPricesByTimeRange = (priceHistory, timeRange) => {  // utility function to filter price history by time range if provided
     const now = Date.now();
     return priceHistory.filter(
       (priceEntry) => new Date(priceEntry.timestamp) >= new Date(now - timeRange * 24 * 60 * 60 * 1000)
     );
   };
 
-exports.calculateBestPrice = (priceEntries) => {
+const calculateBestPrice = (priceEntries) => {
   if (priceEntries.length === 0) {
     return null;
   }
@@ -32,7 +34,7 @@ exports.calculateBestPrice = (priceEntries) => {
 };
 
 // Script Util function
-exports.updateGoldPrice = async () => {
+const updateGoldPrice = async () => {
     try{
         const response = await axios.get('https://localhost:3000/gold-price');
 
@@ -52,3 +54,5 @@ exports.updateGoldPrice = async () => {
         console.log('Error Occured running the Script');
     }
 };
+
+module.exports = {goldPriceGenerate, filterPricesByTimeRange, calculateBestPrice, updateGoldPrice};
