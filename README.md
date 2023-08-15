@@ -8,7 +8,7 @@
  5. Unit Tests have been added to ensure the correct functionality of API endpoints.
 
 ## How To Run
- 1. Clone the Project: ```git clone ```
+ 1. Clone the Project: ```git clone https://github.com/stonerrb/Brilliante.git```
  2. Go to Main Directory: ```cd main ```
  3. To start the development server: ```npm run dev```
  4. To start the Production server: ```npm run prod```
