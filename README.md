@@ -8,11 +8,11 @@
  5. Unit Tests have been added to ensure the correct functionality of API endpoints.
 
 ## How To Run
- 1. Clone the Project: git clone
- 2. Go to Main Directory: cd main
- 3. To start the development server: npm run dev
- 4. To start the Production server: npm run prod
- 5. To run the unit test: npm test
+ 1. Clone the Project: ```bash git clone ```
+ 2. Go to Main Directory: ```bash cd main ```
+ 3. To start the development server: ```bash npm run dev```
+ 4. To start the Production server: ```bash npm run prod```
+ 5. To run the unit test: ```bash npm test```
 
 ## Postman Documentation of API
 
