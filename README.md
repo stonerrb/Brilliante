@@ -1,5 +1,5 @@
 # Brilliante Gold Tracking API
-
+ Gold Price Tracking API using Node.js
 ## Features
  1. Randomly Generate gold prices between 100 to 1000
  2. User can access the price of any gold item and also can update the price of gold items according to the current gold price
