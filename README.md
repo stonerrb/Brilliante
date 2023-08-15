@@ -16,7 +16,7 @@
  5. To run the unit test: ```npm test```
 
 ## Postman Documentation of API
-```https://documenter.getpostman.com/view/24387414/2s9Xy6ppeJ```
+https://documenter.getpostman.com/view/24387414/2s9Xy6ppeJ
 
 ## Tech Stack
  1. Framework: Node.js, Express.js
