@@ -7,6 +7,6 @@ router.use(express.json());
 
 // -------------------- Main ---------------------------
 
-router.get('/gold-price', getGoldPrice);
+router.get('/gold-price', getGoldPrice); // get the gold price
 
 module.exports = router;

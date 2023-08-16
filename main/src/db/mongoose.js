@@ -7,18 +7,18 @@ mongoose.connect(
     }
 )
 
-// const db = mongoose.connection;
+const db = mongoose.connection;
 
-// db.on('error',(error) => {
-//     console.log("Database not connected due to :",error);
-// });
+db.on('error',(error) => {
+    console.log("Database not connected due to :",error);
+});
 
-// db.once('open',() => {
-//     console.log('Conncted to the Database');
-// });
+db.once('open',() => {
+    console.log('Conncted to the Database');
+});
 
-// db.on('disconnected',() => {
-//     console.log("Disconnected to the Database");
-// })
+db.on('disconnected',() => {
+    console.log("Disconnected to the Database");
+})
 
 module.exports = mongoose

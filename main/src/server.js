@@ -8,8 +8,10 @@ require('./db/mongoose');
 const goldPriceRouter = require('./routers/gold');
 const goldItemRouter = require('./routers/item')
 
+// importing utils
 const {updateGoldPrice} = require('./utils');
 
+// ----------------- main --------------------
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -28,7 +30,9 @@ app.use((req, res) => {
     }
 })
 
-cron.schedule('0 0 * * *',() => {
+
+// Scheduled to run at 12 everyday
+cron.schedule('* * * * *',() => {
     updateGoldPrice();
 })
 

@@ -23,7 +23,7 @@ const filterPricesByTimeRange = (priceHistory, timeRange) => {  // utility funct
     );
   };
 
-const calculateBestPrice = (priceEntries) => {
+const calculateBestPrice = (priceEntries) => {  // calculate the best price from all the preices
   if (priceEntries.length === 0) {
     return null;
   }
@@ -36,18 +36,17 @@ const calculateBestPrice = (priceEntries) => {
 // Script Util function
 const updateGoldPrice = async () => {
     try{
-        const response = await axios.get('https://localhost:3000/gold-price');
-
+        const response = await axios.get('http://localhost:3000/gold-price');
+        
         const currentGoldPrice = response.data.gold_price;
-
+        
         const goldItems = await GoldItem.find();
 
         for(const item of goldItems){
-            item.currentPrice = currentGoldPrice * goldItems.grams;
-            item.priceHistory.push({ price: currentGoldPrice * goldItems.grams});
+            item.currentPrice = currentGoldPrice * item.grams;
+            item.priceHistory.push({ price: currentGoldPrice * item.grams});
             await item.save();
         }
-
         console.log('Script ran succesfully');
     }
     catch(error){

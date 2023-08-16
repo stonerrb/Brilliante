@@ -5,7 +5,7 @@ const app = require('../server').app
 chai.use(chaiHttp)
 const expect = chai.expect;
 
-describe('Brillante Jewels API', () => {
+describe('Brillante Jewels API', () => {  // all test cases for API
   
   describe('GET /gold-price', () => {
     it('should retrieve the gold price', (done) => {
@@ -27,7 +27,7 @@ describe('Brillante Jewels API', () => {
   describe('POST /golditem', () => {
     it('should add gold item', (done) => {
       const item = {
-        name : "Rando",
+        name : "Test1",
         grams: 100
       }
       chai
